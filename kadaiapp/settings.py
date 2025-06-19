@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'sisan'
+    'sisan',
+        'bootstrap4', #追加
+
 ]
 
 MIDDLEWARE = [

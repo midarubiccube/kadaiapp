@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">-->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+    <title>
+      {% block title %}{% endblock %}
+    </title>
+</head>
+<body>
+<div class="container">
+  <header id="header">
+    <div id="branding">    
+      <div id="site-name"><a href="">資産管理システム</a></div>
+    </div>
+    <div id="user-tools">
+      ようこそ
+      <strong>{{ username }}</strong>.
+      <a href="/">View site</a> /    
+      <a href="/admin/password_change/">Change password</a>
+    </div>
+  </header>
+  <br/>
+  <div class="content">
+      {% block content %}{% endblock %}
+  </div>
+</div>
+<script src="{% static "js/jquery-3.3.1.min.js" %}"></script>
+<!--<script src="{% static "js/bootstrap.bundle.min.js" %}"></script>-->
+{% block scripts %}{% endblock %}
+</body>
+</html>
