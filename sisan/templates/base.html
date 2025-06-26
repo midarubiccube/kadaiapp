@@ -20,8 +20,11 @@
     <div id="user-tools">
       ようこそ
       <strong>{{ username }}</strong>.
-      <a href="/">View site</a> /    
-      <a href="/admin/password_change/">Change password</a>
+      <a href="{% url 'accounts:password_reset' %}">パスワードをリセット</a>
+      <form id="logout-form" method="post" action="{% url 'accounts:logout' %}">
+        {% csrf_token %}
+        <button type="submit">ログアウト</button>
+      </form>
     </div>
   </header>
   <br/>

@@ -1,6 +1,16 @@
-from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.forms import AuthenticationForm, UsernameField
+from django import forms
+
 
 class UserLoginForm(AuthenticationForm):
+    username = UsernameField(widget=forms.TextInput(attrs={"autofocus": True}), label="ユーザー名")
+
+    password = forms.CharField(
+        label="パスワード",
+        strip=False,
+        widget=forms.PasswordInput(attrs={"autocomplete": "current-password"}),
+    )
+
     error_messages = {
         "invalid_login": (
             "正しい ユーザー名 とパスワードを入力してください。"
