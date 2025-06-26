@@ -11,13 +11,6 @@
     <link rel="stylesheet" href="{% static 'css/login.css' %}">
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     <style>
-    .login #container {
-        width: 30em !important;
-        min-width: 300px;
-        margin: 100px auto;
-        border-style: solid;
-        border-color: #3333FF;
-    }
     div.form-group {
       padding-top: 20px;
     }
@@ -41,7 +34,7 @@
   </header>
     <div id="content" class="colM">
       <div id="content-main">
-        <form method="post" action="{% url 'login' %}">
+        <form method="post" action="{% url 'accounts:login' %}">
         {% csrf_token %}
         {% bootstrap_form form layout='horizontal' %}
         <div class="form-group row px-3">
