@@ -1,12 +1,11 @@
-
 {% extends "base.html" %}
 
 {% block title %}メニュー{% endblock %}
 
 {% block styles %}
 nav.menu ul li {
-    list-style-type:none;
-    font-size: 1.1em;
+list-style-type:none;
+font-size: 1.1em;
 }
 {% endblock %}
 
@@ -15,11 +14,40 @@ nav.menu ul li {
 {% block content %}
 <nav class="menu">
   <ul>
-      <li>
-        <a target="_blank" href="/hello">{{ username }}</a>
-      </li>
+    <li>
+      <a target="_blank" href="/hello">{{ username }}</a>
+    </li>
   </ul>
 </nav>
+<div class="app-auth module">
+  <table>
+    <caption>
+      <a href="/admin/auth/" class="section"
+        title="Models in the Authentication and Authorization application">Authentication and Authorization</a>
+    </caption>
+    <thead class="visually-hidden">
+      <tr>
+        <th scope="col">Model name</th>
+        <th scope="col">Add link</th>
+        <th scope="col">Change or view list link</th>
+      </tr>
+    </thead>
+    <tr class="model-group">
+      <th scope="row" id="auth-group">
+        <a href="/admin/auth/group/">Groups</a>
+      </th>
+      <td><a href="/admin/auth/group/add/" class="addlink" aria-describedby="auth-group">Add</a></td>
+      <td><a href="/admin/auth/group/" class="changelink" aria-describedby="auth-group">Change</a></td>
+    </tr>
+    <tr class="model-user">
+      <th scope="row" id="auth-user">
+        <a href="/admin/auth/user/">Users</a>
+      </th>
+      <td><a href="/admin/auth/user/add/" class="addlink" aria-describedby="auth-user">Add</a></td>
+      <td><a href="/admin/auth/user/" class="changelink" aria-describedby="auth-user">Change</a></td>
+    </tr>
+  </table>
+</div>
 {% endblock %}
 
 {% block scripts %}
