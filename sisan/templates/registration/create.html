@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% load static %}
+
+{% block head %}
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/static/admin/css/responsive.css" />
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+{% endblock %}
+
+{% block title %}ユーザー登録{% endblock %}
+{% block content %}
+<div class="ui grid stackable">
+    <div class="eleven wide column">
+        <div class="ui breadcrumb">
+            <a href="" class="section">TOP</a>
+            <i class="right angle icon divider"></i>
+            <a class="active section">ユーザー作成</a>
+        </div>
+        <div class="ui segment">
+            <div class="content">
+                <div class="header"><h3>ユーザー作成</h3></div>
+                <form class="ui form" action="" method="POST">
+                    {% csrf_token %}
+                    {% bootstrap_form form layout='horizontal' %}
+                    <button class="ui orange button" name="next" value="confirm" type="submit">確認</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

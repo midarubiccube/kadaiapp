@@ -17,7 +17,7 @@
 }
 
 .login #header h1 a {
-    color: var(--header-link-color);
+    /*color: var(--header-link-color);*/
 }
 
 .login #content {
@@ -58,4 +58,14 @@
 
 .login .password-reset-link {
     text-align: center;
+}
+
+div.form-group {
+      padding-top: 20px;
+}
+div#header {
+    padding: 10px;
+}
+div#content-main {
+    padding: 20px;
 }
