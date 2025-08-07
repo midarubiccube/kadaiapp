@@ -77,7 +77,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     )
 
     is_staff = models.BooleanField(
-        _('staff status'),
+        _('管理者権限'),
         default=False,
         help_text='管理者権限を付与するか選択します',
     )

@@ -50,9 +50,10 @@ class UserInfoChangeForm(forms.ModelForm):
         user.save()
 
 class CustomUserCreationForm(UserCreationForm):
+
     class Meta:
         model = User
-        fields = ('username', 'email', 'department')
+        fields = ('username', 'email', 'department', 'is_staff')
 
     def __init__(self, *args, **kwargs):
         kwargs.setdefault('label_suffix','')
